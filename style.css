@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body{
+    height: 100%;
+    width: 100%;
+    background-color: #2b2a2a;
+    overflow: hidden;
+}
+
+main{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+button{
+      padding:10px 20px;
+    background-color: rgba(235, 59, 85, 0.907);
+    cursor:pointer;
+    border: none;
+    z-index: 2;
+}
+button:hover{
+    scale: 0.95;
+    background-color: #1b22a1b9;
+    border: 2px solid white;
+}
