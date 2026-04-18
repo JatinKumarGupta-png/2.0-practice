@@ -7,57 +7,48 @@
 html,body{
     height: 100%;
     width: 100%;
-    background-color: #222;
+    background-color: #3c3a3a;
 }
 main{
     height: 100%;
     width: 100%;
+    padding: 20px;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 20px;
+    
 }
 .card{
     
-    width: 300px;
+    width: 250px;
     background-color: white;
     border-radius: 20px;
     padding: 25px 20px;
-    position: relative;
-    cursor: pointer;
-}
-.card img{
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-    overflow: hidden;
+    text-align: center;
     
 }
-.card i{
-        font-size: 100px;
-        opacity: 0;
-        color: transparent;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        background-image: url(https://img.freepik.com/premium-photo/close-up-colorful-background-with-rainbow-colored-surface_1269642-41131.jpg);
-        object-fit: cover;
-        background-size: cover;
-        background-clip: text;
-        
-        transform: translate(-50%,-50%) scale(0.5) rotate(-60deg);
-        transition: all 0.4s cubic-bezier(1,1.78,.77,.8);
-}
-.card h2{
-    font-size: 20px;
-    margin-top: 15px;
-    font-weight: 400;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-}
-.card:hover{
+.card img{
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    border-radius: 50%;
    
-  /* filter: brightness(96%); */
-  background: rgba(250, 249, 249, 0.976);
-
+    
+}
+.card h3{
+    font-size: 25px;
+    font-weight: 600;
+    margin-top: 15px;
+}
+.card h4{
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 15px;
+    color: rgba(75, 75, 209, 0.802);
+}
+.card p{
+    font-size: 15px;
+    font-weight: 300;
+    margin-top: 15px;
 }
