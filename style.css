@@ -7,26 +7,76 @@ html, body{
     height: 100%;
     width: 100%;
     background-color: #2b2a2a;
-    overflow: hidden;
+    
 }
 
 main{
     height: 100%;
     width: 100%;
     display: flex;
-    justify-content: center;
     align-items: center;
-   
+    justify-content: center;
+    
 }
-button{
-      padding:10px 20px;
-    background-color: rgba(235, 59, 85, 0.907);
-    cursor:pointer;
+.card{
+    height: 250px;
+    width: 500px;
+    background-color: #cbe3cbf6;
+    border-radius: 10px;
+    padding: 25px 10px;
+}
+/* .card img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+
+    opacity: 0;
+} */
+.outer{
+    height: 20px;
+    width: 100%;
+    background-color: rgb(252, 249, 249);
+    /* margin-top: 20px ; */
+    border-radius: 50px;
+
+}
+.inner{
+    height: 100%;
+    width: 0%;
+    background-color: rgba(9, 162, 9, 0.926);
+    border-radius: 50px;
+}
+.card p{
+    font-size: 18px;
+    font-weight: 300;
+    margin-bottom: 10px;
+    text-align: center;
+
+}
+.card span{
+    color: rgba(56, 56, 186, 0.934);
+}
+.bottom{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+    padding: 25px 40px;
+
+}
+.bottom button{
+    padding: 12px 25px;
     border: none;
-    z-index: 2;
+    background-color: rgba(25, 27, 25, 0.926);
+    color: white;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
 }
-button:hover{
-    scale: 0.95;
-    background-color: #1b22a1b9;
-    border: 2px solid white;
+.bottom h2{
+    font-size: 50px;
+    font-weight: 300;
+}
+.bottom button:active{
+    scale: .90;
 }
