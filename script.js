@@ -1,25 +1,98 @@
-let btn = document.querySelector("button");
-let h2 = document.querySelector('h2');
-let inner = document.querySelector('.inner');
-let card = document.querySelector('.card');
+const iplTeams = [
+  {
+    teamName: "MI",
+    fullName: "Mumbai Indians",
+    captain: "Hardik Pandya",
+    primaryColor: "red",
+    secondaryColor: "Gold",
+    textColor:"White"
 
-let grow = 0;
+    
+
+  },
+  {
+    teamName: "CSK",
+    fullName: "Chennai Super Kings",
+    captain: "Ruturaj Gaikwad",
+    primaryColor: "Yellow",
+    secondaryColor: "Blue",
+    textColor:"White"
+  },
+  {
+    teamName: "RCB",
+    fullName: "Royal Challengers Bangalore",
+    captain: "Faf du Plessis",
+    primaryColor: "Red",
+    secondaryColor: "Black",
+    textColor:"White"
+  },
+  {
+    teamName: "KKR",
+    fullName: "Kolkata Knight Riders",
+    captain: "Shreyas Iyer",
+    primaryColor: "Purple",
+    secondaryColor: "Gold",
+    textColor:"White"
+  },
+  {
+    teamName: "DC",
+    fullName: "Delhi Capitals",
+    captain: "Rishabh Pant",
+    primaryColor: "black",
+    secondaryColor: "blue",
+    textColor:"White"
+  },
+  {
+    teamName: "SRH",
+    fullName: "Sunrisers Hyderabad",
+    captain: "Pat Cummins",
+    primaryColor: "Orange",
+    secondaryColor: "Black",
+    textColor:"White"
+  },
+  {
+    teamName: "RR",
+    fullName: "Rajasthan Royals",
+    captain: "Sanju Samson",
+    primaryColor: "bagani",
+    secondaryColor: "Blue",
+    textColor:"White"
+  },
+  {
+    teamName: "PBKS",
+    fullName: "Punjab Kings",
+    captain: "Shikhar Dhawan",
+    primaryColor: "Red",
+    secondaryColor: "Gold",
+    textColor:"White"
+  },
+  {
+    teamName: "GT",
+    fullName: "Gujarat Titans",
+    captain: "Shubman Gill",
+    primaryColor: "Navy Blue",
+    secondaryColor: "Gold",
+    textColor:"White"
+  },
+  {
+    teamName: "LSG",
+    fullName: "Lucknow Super Giants",
+    captain: "KL Rahul",
+    primaryColor: "Light Blue",
+    secondaryColor: "Orange",
+    textColor:"White"
+  }
+];
+var h1 = document.querySelector("h1");
+var main = document.querySelector("main");
+var btn = document.querySelector("button");
+
 btn.addEventListener('click', function(){
-    btn.style.pointerEvents = 'none';
-    let num = Math.floor(Math.random()*50)+50;
-    // let img = document.createElement("img");
-    // img.src = "https://images.pexels.com/photos/36815599/pexels-photo-36815599.jpeg";
-    // card.appendChild(img);
-    // card.style.opacity = 1;
-    let int = setInterval(function(){
-        grow++;
-        h2.innerHTML = grow +'%';
-        inner.style.width = grow + '%';
-    },num);
-     console.log(num);
-     setTimeout(function(){
-        clearInterval(int);
-        btn.innerHTML = 'Downloaded';
-        btn.style.opacity = 0.8;
-     },num*100);
+    var Index = Math.floor(Math.random() * iplTeams.length);
+    var team = iplTeams[Index];
+    console.log(team);
+    h1.textContent = team.teamName;
+    main.style.backgroundColor = team.secondaryColor;
+    h1.style.backgroundColor = team.primaryColor;
+   
 })
