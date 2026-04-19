@@ -1,11 +1,16 @@
 
-let span = document.querySelector('span');
-let box = document.querySelector('#box');
+var allBtn = document.querySelectorAll('button');
 
 
-box.addEventListener('mouseenter', function(){
-    span.innerHTML ='   ----Ha ab theek hai 😂😂😂';
-})
-box.addEventListener('mouseleave', function(){
-    span.innerHTML =' _Fool ko hath mat lgao🤬🤬🤬';
+
+allBtn.forEach(function(elem){
+    elem.addEventListener('click', function(){
+        if(elem.innerHTML === 'Add Friend'){
+            elem.innerHTML =' Remove Friend';
+            
+        }else{
+            elem.innerHTML = 'Add Friend';
+            
+        }
+    })
 })
