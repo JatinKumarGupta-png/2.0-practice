@@ -1,37 +1,44 @@
- addEventListener('mousemove',function(e){
-    console.log(e.clientX ,e.clientY);
-    this.document.body.style.setProperty("--x",e.clientX +'px');
-    this.document.body.style.setProperty('--y',e.clientY +'px');
- })
 
-var btn = document.querySelector("button");
 
-function createVideo(){
-    var video = document.createElement("video");
+let iteration = 0;
+const p = document.querySelector('p');
+const originalText = p.innerText;
+const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+const chars = characters.split('');
 
-    video.src = "./video.mp4";
-    video.autoplay = true;
-    video.muted = true;   
-    video.loop = true;
+let interval; 
 
-    video.style.position = "fixed";
-    video.style.top = "0";
-    video.style.left = "0";
-    video.style.width = "100%";
-    video.style.height = "100%";
-    video.style.objectFit = "cover";
-    video.style.zIndex = "-1";
 
-    document.body.appendChild(video);
 
-    return video;   
-}
+p.addEventListener('mouseenter', function () {
+    iteration = 0; 
 
-btn.addEventListener("click", function(){
-    var myVideo = createVideo();
+    clearInterval(interval); 
 
-    myVideo.muted = false;   
-    myVideo.play();          
+    interval = setInterval(() => {
+        let str = originalText.split('').map((char, idx) => {
+            if (idx < iteration) {
+                return char;
+            }
+            return chars[Math.floor(Math.random() * chars.length)];
+        }).join('');
 
-    btn.remove();
+        p.innerText = str;
+
+        if (iteration >= originalText.length) {
+            clearInterval(interval); 
+        }
+
+        iteration += 0.5;
+    }, 40);
 });
+p.addEventListener('mouseleave', () => {
+    clearInterval(interval);
+    p.innerText = text;
+});
+
+document.addEventListener('mousemove', function(e){
+    document.body.style.setProperty("--x", e.clientX + 'px');
+    document.body.style.setProperty("--y", e.clientY + 'px');
+});
+
