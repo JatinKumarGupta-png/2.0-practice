@@ -14,41 +14,64 @@ html{
 }
 
 body{
+    background-color: #333;
     display: flex;
     align-items: center;
-    justify-content: center;
-    background-color: #333;
+    justify-content: center;   
+}
+.container{
+  perspective: 1000px;
+}
+
+.card{
+  position: relative;
+  width: 200px;
+  height: 300px;
+  transform-style: preserve-3d;
+  animation: flip 5s linear infinite alternate;
+ 
 }
 
 
-:root{
-    --x:400px;
-    --y:400px
-}
-main{
-    height: 100%;
-    width: 100%;
-   position: absolute;
-   z-index: 1;
-     background: radial-gradient(100px at var(--x) var(--y) ,rgba(129, 127, 127, 0.514) 0%,rgba(94, 33, 33, 0.799)90%,rgb(71, 76, 75));
+.front, .back{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: rgb(230, 223, 223);
+  backface-visibility: hidden; 
+  border: 1px solid white;
+  border-radius: 5px;
 }
 
-/* .box{
-    position: absolute;
-    z-index: 1;
-    pointer-events: none;
-    height: 100%;
-    width: 100%;
-    background: radial-gradient(120px at var(--x) var(--y) ,rgba(255, 255, 255, 0) 0%,rgba(24, 24, 24, 0.799)90%,rgb(8, 8, 8));
-} */
-p{
-    position:relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    font-size: 3rem;
-    color: rgba(33, 33, 234, 0.92);
+.front{
+  background-color: rgb(81, 81, 236);
+
+}
+
+.back{
+  background-color: rgba(214, 74, 74, 0.953);
+  transform: rotateY(180deg); 
+}
+
+
+@keyframes flip{
+  from{
+    transform: rotateY(0deg);
     
-    padding: 20px 40px;
+     box-shadow: 10px 10px 20px blue;
+  }
+  to{
+    transform: rotateY(180deg);
+    
+     box-shadow: 10px 10px 20px rgb(237, 42, 90);
+  }
 }
-
+.container:hover{
+  scale: .90;
+  
+  
+}
